@@ -1,0 +1,176 @@
+// fonts
+
+$fontDefaultSize = 18px
+$fontDefaultLineHeight = 22px
+$fontDefaultFontFamily = Roboto, Arial, "Helvetica Neue", "Lucida Grande", sans-serif
+$fontDefault = $fontDefaultSize\/$fontDefaultLineHeight $fontDefaultFontFamily
+
+$fontCondensed = "Roboto Condensed", Tahoma, "Helvetica Neue", "Lucida Grande", sans-serif
+
+$fontSizeH1 = 38px
+$fontLineHeightH1 = 38px
+$fontH1 = bold $fontSizeH1\/$fontLineHeightH1 $fontCondensed
+
+$fontSizeH2 = 26px
+$fontLineHeightH2 = 26px
+$fontH2 = $fontSizeH2\/$fontLineHeightH2 $fontCondensed
+
+$fontSizeH3 = 22px
+$fontLineHeightH3 = 22px
+$fontH3 = $fontSizeH3\/$fontLineHeightH3 $fontDefaultFontFamily
+
+$fontSizeH4 = 20px
+$fontLineHeightH4 = 20px
+$fontH4 = $fontSizeH4\/$fontLineHeightH4 $fontDefaultFontFamily
+
+$fontH5 = 700 $fontDefaultSize\/$fontDefaultLineHeight $fontDefaultFontFamily
+
+$fontH6 = 700 $fontDefaultSize\/$fontDefaultLineHeight $fontDefaultFontFamily
+
+
+// colors
+
+$defaultColor = #444
+$light = #666
+$blue0 = #007082
+$blue1 = #268ea3
+$blue2 = #27b8cd
+$gray = #999
+$white = #fff
+$green = #63d627
+$red = #c55959
+
+
+
+
+// extensions
+
+$h1
+  margin 0 0 18px
+  font $fontH1
+  color $blue0
+  text-transform uppercase
+
+$h2
+  margin 0 0 18px
+  font $fontH2
+  color $blue0
+
+$h3
+  margin 0 0 18px
+  font $fontH3
+  color $blue0
+
+$h4
+  margin 0 0 18px
+  font $fontH4
+  color $defaultColor
+
+$h5
+  margin 0 0 18px
+  font $fontH5
+  color $defaultColor
+
+$h6
+  margin 0 0 18px
+  font $fontH6
+  color $gray
+
+
+
+
+// this block will be included to editor.css and stylus.css
+
+typography()
+  ::-moz-selection {
+    background $blue1
+    color #fff
+    text-shadow none
+  }
+  ::selection {
+    background $blue1
+    color #fff
+    text-shadow none
+  }
+  body
+    font $fontDefault
+  body, input, select, textarea, button
+    color $defaultColor
+    font-family $fontDefaultFontFamily
+  :link, :visited
+    color $blue1
+    text-decoration underline
+  a:hover
+    color $blue1
+    text-decoration none
+  h1, .h1
+    @extend $h1
+  h2, .h2
+    @extend $h2
+  h3, .h3
+    @extend $h3
+  h4, .h4
+    @extend $h4
+  h5, .h5
+    @extend $h5
+  h6, .h6
+    @extend $h6
+  a, input, select, textarea, button
+    outline 0 none
+  td, th
+    vertical-align top
+  ul, ol
+    margin-left 0
+    padding-left 0
+    li
+      margin 7px 0 7px 20px
+      position relative
+      li
+        margin-left 30px
+      > ul, > ol
+        margin-top 15px
+        margin-bottom 15px
+  ul
+    > li
+      list-style none
+      &:before, li:before
+        content ""
+        display inline-block
+        background $blue0
+        width 6px
+        height 6px
+        position absolute
+        left -17px
+        top 8px
+      li:before
+        content "–"
+        background transparent
+        top 0
+        left -20px
+  ol > li
+    list-style decimal
+  blockquote
+    background #fff
+    margin 0 0 30px
+    padding 0 25px
+    border 1px solid #ccc
+    font-size 21px
+    line-height 24px
+    font-style italic
+    radius(5px)
+  table
+    border 0 none
+    border-spacing 0
+    border-collapse collapse
+    margin 0
+    td, th
+      padding 12px 20px
+      border 2px solid $blue1
+      text-align left
+    &.no-border td, &.no-border th
+      border 0 none
+    th
+      font-size 20px
+      font-weight bold
+      color $blue0
+      padding-bottom 20px

@@ -1,0 +1,35 @@
+linearGradient(color1, color2)
+  background -o-linear-gradient(top, color1, color2);
+  background -ms-linear-gradient(top, color1, color2);
+  background -moz-linear-gradient(top, color1, color2);
+  background -webkit-linear-gradient(top, color1, color2);
+  background -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%,color1), color-stop(100%,color2));
+  background linear-gradient(to bottom, color1, color2);
+
+radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+shadow()
+  -webkit-box-shadow arguments
+  -moz-box-shadow arguments
+  box-shadow arguments
+
+transition()
+  -webkit-transition arguments
+  -moz-transition arguments
+  -o-transition arguments
+  transition arguments
+
+transform()
+  -webkit-transform arguments
+  -moz-transform arguments
+  -ms-transform arguments
+  -o-transform arguments
+  transform arguments
+
+sprite()
+  @extend $sprite
+  background-position arguments

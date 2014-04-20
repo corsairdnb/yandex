@@ -1,0 +1,893 @@
+@import mixin
+@import typography
+@import extension
+
+
+/************************
+*
+*      CONSTRUCTION
+*
+*************************/
+
+typography()
+
+html, body
+  height 100%
+
+body
+  background #fff
+  display table
+  width 100%
+
+body.home
+  background #fff
+
+#wrapper
+  linearGradientBody(#e2f4f9,#fff,80%)
+  display table-row-group
+
+#footer
+  display table-footer-group
+  height 1px
+
+#wrap-header
+  background url(img/bg_top_inner.png) no-repeat center top
+  @extend $relative
+
+#wrap-header:after, .home #wrap-center:after
+  background url(img/bg_shadow.png) no-repeat center top
+  content ""
+  @extend $block
+  width 100%
+  height 36px
+  @extend $absolute
+  @extend $left
+  bottom -36px
+  border-top 1px solid #fff
+  z-index 1
+
+#wrap-header:after
+  opacity .5
+
+.home #wrap-header:after
+  display none
+
+.home #wrap-header
+  background #fff url(img/bg_top.jpg) no-repeat center top
+
+#wrap-center
+  background url(img/bg_center_shadow.png) no-repeat center top
+  @extend $relative
+
+.home #wrap-center
+  background #fff
+
+.home #wrap-center:after
+  height 36px
+
+#wrap-business
+  background #fff url(img/bg_business.png) no-repeat center 80px
+  padding-top 80px
+  padding-bottom 50px
+
+#wrap-organize
+  background #fff url(img/bg_organize.png) no-repeat center 50px
+  padding-top 50px
+  padding-bottom 50px
+
+#wrap-footer
+  background #fff url(img/bg_footer.png) no-repeat center bottom
+
+$width
+  width 980px
+
+$container
+  @extend $width
+  @extend $m0auto
+  @extend $relative
+
+#container-header
+  @extend $container
+  height 175px
+
+.home #container-header
+  height 537px
+
+#container-center
+  background #fff url(img/bg_center.jpg) repeat-x
+  @extend $container
+  padding 50px 40px
+  margin-top 0
+  min-height 570px
+  margin-bottom 0
+  > :first-child
+    margin-top 0 !important
+
+.home #container-center
+  background none
+  padding 30px 10px 50px
+  min-height 0
+
+#container-business
+  @extend $container
+  height 513px
+
+#container-organize
+  @extend $container
+  height 319px
+
+#container-bottom
+  @extend $container
+  padding 0 0 50px
+
+#container-footer
+  @extend $container
+  height 169px
+
+.popup-shadow
+  display none
+  background #000
+  position fixed
+  @extend $left
+  @extend $top
+  width 100%
+  height 100%
+  opacity 0
+  z-index 1
+
+.shadow .popup-shadow
+  @extend $block
+
+.popup, .alert
+  display none
+  background #fff
+  shadow(0 0 40px 0 rgba(0,0,0,.6))
+  width 400px
+  height 300px
+  position fixed
+  left 50%
+  top 50%
+  margin -150px 0 0 -200px
+  z-index 2
+  opacity 0
+
+.alert
+  opacity 1
+  height 200px
+  margin-top -100px
+  z-index 3
+
+.popup-close
+  @extend $block
+  @extend $absolute
+  right -12px
+  top -12px
+  width 30px
+  height 30px
+  background #000
+  border 2px solid #fff
+  radius(50%)
+  shadow(0 0 3px rgba(0,0,0,1))
+  text-align center
+  font-size 15px
+  color $white
+  cursor pointer
+  transition(transform .2s ease-out)
+  &:hover
+    transform(scale(1.1))
+  > i
+    vertical-align middle
+
+[type="text"], [type="email"], [type="tel"]
+  width 280px
+  padding 5px 10px
+  background #fff
+  border 1px solid #ccc
+  shadow(0 2px 3px rgba(0,0,0,.15) inset)
+  font-size 20px
+  line-height 24px
+  &:focus
+    border-color #999
+
+[type="submit"]
+  padding 0
+  background transparent
+  border 0 none
+  text-align center
+  text-transform uppercase
+  font-size 14px
+  font-weight bold
+  color $white
+
+
+/************************
+*
+*         MENU
+*
+*************************/
+
+.menu
+  @extend $mp0
+
+.top-menu
+  @extend $absolute
+  left 235px
+  @extend $top
+  > ul
+    padding 20px 14px 12px
+    font-size 0
+    > li
+      @extend $ib
+      @extend $mp0
+      margin 0 12px
+      > a, span
+        color white
+        font-family $fontCondensed
+        font-size 16px
+        line-height 16px
+        text-decoration none
+        text-transform uppercase
+        border-bottom 1px solid $white
+        &:hover
+          border-bottom 0 none
+      &:before
+        display none
+
+.home .top-menu
+  background $blue1
+  @extend $left
+
+/************************
+*
+*        HEADER
+*
+*************************/
+
+.header-contacts
+  @extend $absolute
+  left 550px
+  top 80px
+  color $blue1
+  font-family $fontCondensed
+  font-style normal
+  text-shadow 0 -1px 0 #fff
+  > span
+    padding 0 3px
+    vertical-align top
+    line-height 34px
+    font-size 20px
+  > abbr
+    font-size 45px
+    line-height 45px
+  > a
+    margin 0 0 0 17px
+    font-size 21px
+    color inherit
+    text-decoration none
+    &:hover
+      text-decoration underline
+    > .icon-mail
+      vertical-align middle
+  > .icon-phone
+    font-size 26px
+    margin-right -2px
+  &:before,&:after
+    content ""
+    @extend $block
+    @extend $absolute
+    top -15px
+    width 28px
+    height 108px
+    background url("img/delimiter.png") no-repeat
+  &:before
+    left -20px
+  &:after
+    right -50px
+
+.home .header-contacts
+  left 27px
+  > abbr
+    font-size 52px
+    line-height 52px
+  > a
+    font-size 24px
+  > .icon-phone
+    font-size 35px
+    margin-left -10px
+
+.home .header-contacts:before, .home .header-contacts:after
+  display none
+
+.free-30-days
+  @extend $absolute
+  left 43px
+  top 205px
+  padding 3px 7px 5px
+  background #000
+  background rgba(0,0,0,.7)
+  color $white
+  font-family $fontCondensed
+  font-size 19px
+  text-align center
+  > div
+    font-size 40px
+    font-weight bold
+    line-height 35px
+    text-transform uppercase
+
+.index-login
+  @extend $absolute
+  @extend $right
+  @extend $top
+  width 194px
+
+.login-mini-form
+  color $white
+  font-family $fontCondensed
+  [type="text"]
+    width 145px
+    background #fff
+    margin 5px 0 5px 9px
+    padding 4px 6px
+    border 0 none
+    radius(5px)
+    font-size 13px
+    line-height 17px
+
+.login-mini-form-container
+  background $blue1
+  padding 10px 15px 8px
+
+.login-mini-form-title
+  font-size 14px
+  white-space nowrap
+
+.login-mini-form-buttons
+  @extend $table
+  width 100%
+  background $blue0
+  font-size 12px
+  border-top 1px solid #e0f4f9
+  > a
+    @extend $tc
+    color $white
+    text-align center
+    text-decoration none
+    &:first-child
+      border-right 1px solid #e0f4f9
+    &:hover
+      background $blue2
+
+.header-vk
+  @extend $absolute
+  right 260px
+  top 20px
+  > a
+    @extend $block
+    width 38px
+    height 38px
+    sprite(0 -462px)
+    @extend $transparent
+    transition(all .3s)
+    &:hover
+      transform(scale(1.1))
+
+.index-register
+  @extend $absolute
+  @extend $left
+  top 330px
+
+.index-register-form
+  width 282px
+
+.index-register-form-label
+  @extend $block
+  @extend $relative
+  margin 13px 0 0 25px
+  > [type="text"], > [type="email"], > [type="tel"]
+    width 100%
+    background #fff
+    @extend $relative
+    z-index 1
+    margin 0
+    padding 8px 35px 8px 12px
+    border 0 none
+    radius(10px)
+    font-size 18px
+    vertical-align top
+
+.index-register-form-label, .register-complete-label, .form-label
+  > .icon-ok, > .icon-cancel
+    display none
+    @extend $absolute
+    right 0
+    top 8px
+    z-index 1
+    font-size 25px
+    color $green
+  &.valid > .icon-ok
+    display inline
+  &.invalid > .icon-cancel
+    display inline
+    color $red
+
+.index-register-form-label, .register-complete-label
+  > .icon-user, > .icon-phone
+    @extend $absolute
+    left -25px
+    @extend $top
+    @extend $ib
+    padding 4px 15px 4px 3px
+    radius(10px)
+    background #005a69
+    color #63abbd
+    font-size 16px
+
+
+.index-register-form-container
+  text-align right
+
+.index-register-form-submit
+  display none
+  @extend $relative
+  float right
+  background #005a69
+  border 0 none
+  radius(5px)
+  margin 10px 0 0
+  padding 1px 0 3px 12px
+  color $white
+  font-weight bold
+  z-index 1
+  cursor pointer
+  &:hover > input
+    color #B3EFFF
+  > i
+    position static
+    padding 0 2px 0 5px
+    background transparent
+
+.index-register-form-title
+  margin 0 0 0 25px
+  white-space nowrap
+  color $white
+  font bold 20px/20px $fontCondensed
+  text-transform uppercase
+  text-shadow 0 1px 0 $blue0
+
+.test-now
+  @extend $absolute
+  right 0
+  top 82px
+  > a
+    @extend $block
+    width 157px
+    height 68px
+    sprite(-380px -322px)
+    @extend $transparent
+    &:hover
+      sprite(-380px -393px)
+
+.home .test-now
+  right 5px
+  top 165px
+  > a
+    width 182px
+    height 102px
+    sprite(-380px -118px)
+    &:hover
+      sprite(-380px -220px)
+
+.new-delivery
+  @extend $absolute
+  left 50%
+  top 347px
+  > a
+    @extend $block
+    margin-left -190px
+    width 380px
+    height 114px
+    @extend $transparent
+    sprite(0 0)
+    &:hover
+      sprite(0 -114px)
+    &:active
+      sprite(0 -228px)
+
+.slogan
+  @extend $absolute
+  @extend $left
+  top 465px
+  width 100%
+  color $white
+  font 18px/18px $fontCondensed
+  text-align center
+  text-transform uppercase
+
+.slogan-inner
+  @extend $absolute
+  left 242px
+  top 73px
+  width 280px
+  font-family $fontCondensed
+  font-size 38px
+  line-height 40px
+  text-transform uppercase
+  color $blue1
+
+.our-price
+  @extend $absolute
+  @extend $right
+  top 315px
+
+.our-price-title
+  @extend $h1
+  margin 0 25px 10px 0
+  color $white
+  text-shadow 0 1px 0 $blue0
+  text-align right
+  > a
+    color $white
+    text-decoration none
+
+.our-price-row
+  margin 10px 0 0
+  > span
+    @extend $ib
+    height 30px
+    padding 4px 0 0
+    font-family $fontCondensed
+    font-size 24px
+    color $white
+    vertical-align top
+    &:first-child
+      margin 0 4px 0 0
+    &:nth-child(2)
+      background #fff
+      @extend $relative
+      z-index 1
+      width 125px
+      color $blue0
+      font-size 26px
+      font-weight bold
+      text-align center
+      radius(10px)
+    &:nth-child(3)
+      background $blue0
+      radius(10px)
+      width 85px
+      margin 0 -5px 0 -18px
+      padding 3px 0 0 10px
+      text-align center
+    &:last-child
+      font-size 17px
+
+#home
+  @extend $block
+  width 223px
+  height 55px
+  @extend $absolute
+  @extend $left
+  @extend $top
+  @extend $transparent
+  z-index 1
+  border-bottom 1px solid rgba(0,0,0,.3)
+  radius(0 0 0 10px)
+  linearGradient(#479baf,#007b8e)
+  &:hover
+    linearGradient(#4fbcd0,#007b8e)
+  &:active
+    linearGradient(#007b8e,#479baf)
+  &:after
+    content ""
+  > span
+    @extend $block
+    sprite(-380px -460px)
+    width 182px
+    height 40px
+    margin 8px 0 0 22px
+
+
+/************************
+*
+*        BUSINESS
+*
+*************************/
+
+.index-business-header
+  @extend $absolute
+  @extend $left
+  top 222px
+  width 100%
+  color $white
+  font bold 48px/48px $fontCondensed
+  text-align center
+  text-transform uppercase
+  > a
+    color inherit
+    text-decoration none
+
+.index-business
+  @extend $absolute
+  width 220px
+  height 175px
+  font-size 17px
+  line-height 24px
+  &:first-child
+    left 35px
+    top 16px
+    text-align right
+  &:nth-child(2)
+    right 35px
+    top 16px
+  &:nth-child(3)
+    left 35px
+    top 308px
+    text-align right
+  &:last-child
+    right 35px
+    top 308px
+  > p
+    margin 0
+
+.index-business-title
+  @extend $h1
+  margin 0 0 10px
+
+.index-business-more
+  @extend $absolute
+  @extend $left
+  top 493px
+  width 100%
+  text-align center
+  > a
+    @extend $ib
+    background $blue0
+    padding 9px 30px 9px 50px
+    color $white
+    @extend $h1
+    font-size 30px
+    line-height 30px
+    text-decoration none
+    &:hover
+      background $blue1
+    &:after
+      content ""
+      @extend $ib
+      border-left 12px solid $blue1
+      border-right 12px solid transparent
+      border-top 12px solid transparent
+      border-bottom 12px solid transparent
+      margin 0 0 0 12px
+    &:hover:after
+      border-left-color $blue2
+
+
+/************************
+*
+*        ORGANIZE
+*
+*************************/
+
+.organize-header
+  @extend $absolute
+  left 31px
+  top 48px
+  width 0
+  font-family $fontCondensed
+  font-size 20px
+  font-weight bold
+  color $blue1
+  text-align center
+  text-transform uppercase
+  letter-spacing 2px
+  white-space nowrap
+  &:first-line
+    @extend $h1
+    line-height 35px
+    letter-spacing 0
+
+.organize-contacts-title
+  @extend $absolute
+  left 27px
+  top 130px
+  width 220px
+  font-family $fontCondensed
+
+.organize-contacts-phone
+  @extend $absolute
+  left 27px
+  top 182px
+  padding 0 12px 2px
+  background $blue1
+  font-family $fontCondensed
+  font-size 45px
+  line-height 45px
+  color $white
+  > i
+    font-size 35px
+  > span
+    vertical-align top
+  > span:first-child
+    font-size 21px
+    line-height 32px
+
+.organize-contacts-email
+  @extend $absolute
+  left 27px
+  top 235px
+  font-family $fontCondensed
+  > a > i
+    vertical-align middle
+
+.organize-step
+  @extend $absolute
+  width 240px
+  font-family $fontCondensed
+  font-size 24px
+  font-weight bold
+  line-height 22px
+  color $blue0
+  &:first-child
+    left 425px
+    top 35px
+  &:nth-child(2)
+    left 425px
+    top 95px
+  &:nth-child(3)
+    left 425px
+    top 175px
+  &:nth-child(4)
+    left 750px
+    top 35px
+  &:nth-child(5)
+    left 750px
+    top 95px
+
+.organize-submit
+  @extend $absolute
+  right 17px
+  top 190px
+  > a
+    @extend $block
+    @extend $transparent
+    width 279px
+    height 59px
+    sprite(-380px 0)
+    &:hover
+      sprite(-380px -59px)
+
+
+/************************
+*
+*        FOOTER
+*
+*************************/
+
+.footer-menu
+  @extend $absolute
+  left 27px
+  top 68px
+  > ul
+    width 310px
+    font-size 0
+    > li
+      @extend $ib
+      @extend $mp0
+      width 155px
+      padding 0 20px 0 0
+      > a, span
+        color white
+        font-size 12px
+        line-height 12px
+        text-decoration none
+        text-transform uppercase
+        border-bottom 1px solid $white
+        &:hover
+          border-bottom 0 none
+      &:before
+        display none
+
+.footer-copyright
+  @extend $absolute
+  right 27px
+  top 40px
+  width 270px
+  color #fff
+  font-size 12px
+  line-height 14px
+  a
+    color #fff
+
+.footer-new-delivery
+  @extend $absolute
+  left 50%
+  top 70px
+  > a
+    @extend $block
+    @extend $transparent
+    sprite(0 -342px)
+    width 276px
+    height 60px
+    margin 0 0 0 -138px
+    &:hover
+      sprite(0 -402px)
+
+
+/************************
+*
+*        POPUP
+*
+*************************/
+
+.register-complete
+  padding 0 20px 20px;
+  text-align center
+
+//.register-complete-form
+
+.register-complete-title
+  background $blue0
+  margin 20px 0
+  padding 10px 0
+  color $white
+
+.register-complete-label
+  @extend $block
+  @extend $relative
+  margin 10px 0 15px
+
+.register-complete-submit, .alert-close
+  width 150px
+  background $blue0
+  linearGradient($blue1, $blue0)
+  margin 20px auto
+  padding 8px 0 9px
+  radius(3px)
+  color $white
+  cursor pointer
+  &:hover
+    background $blue1
+  > i
+    margin-left -5px
+
+.alert-content
+  padding 0 20px
+
+.alert-close
+  text-align center
+
+.login-form
+  width 400px
+  float left
+  margin 0 75px 0 0
+  > .register-complete-submit
+    width 200px
+    margin 20px 0
+    text-align center
+
+
+.form-label
+  @extend $block
+  @extend $relative
+  width 300px
+  margin 10px 0
+  > input
+    width 100%
+
+.download-program
+  @extend $block
+  @extend $transparent
+  float left
+  width 334px
+  height 328px
+  margin 0 0 0 -20px
+  background url("img/download.png") no-repeat
+  opacity .85
+  transition(opacity .2s)
+  &:hover
+    opacity 1
+
+.home table td
+  border 0 none
+  padding 0
