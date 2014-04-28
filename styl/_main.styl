@@ -1,11 +1,4 @@
-@import mixin
-@import typography
-
-typography()
-
 *
-	-webkit-box-sizing border-box
-	-moz-box-sizing border-box
 	box-sizing border-box
 
 html, body
@@ -13,46 +6,80 @@ html, body
 
 body
 	background #fff
-	width 100%
 	margin 0
+	font 1.5rem/1.5rem sans-serif
+
+header
+	background linear-gradient(to bottom, #006699, #003366)
+	box-shadow 0 0 2vh rgba(0,0,0,.5)
+	border-bottom 1px solid #dbf2ff
 	position relative
+
+h1
+	margin 0
+	padding 2vh
+	color #fff
+	font-size 3rem
+	line-height 3rem
+
+.page
+	display flex
+	flex-flow column
+
+.page__line
+	min-height 20vh
+	padding 2vh
+	background #eff9ff
+
+.page__line:nth-child(odd)
+	background #dbf2ff
+
+$ratingBasicWidth = 6vw
+$ratingBasicHeight = $ratingBasicWidth / 5
 
 .rating
 	display inline-block
 	position relative
-	width 320px
-	height 64px
+	width $ratingBasicWidth
+	height $ratingBasicHeight
+	min-width 80px
+	min-height 16px
 
-.rating-wrapper
+.rating_big
+	width $ratingBasicWidth*2
+	height $ratingBasicHeight*2
+
+.rating_huge
+	width $ratingBasicWidth*4
+	height $ratingBasicHeight*4
+
+.rating__wrapper
 	display flex
 	flex-direction row-reverse
 	justify-content flex-end
 	width 100%
 	height 100%
 
-.rating-input
+.rating__input
 	margin 0
 	padding 0
 	opacity 0
 
-.rating-input, .rating-star
+.rating__input, .rating__star
 	flex 1
 
-.rating:hover .rating-star:hover,
-.rating:hover .rating-star:hover ~ .rating-star,
-.rating-input:checked ~ .rating-star
-	background-image url(../../star_2.svg)
+.rating:hover .rating__star:hover,
+.rating:hover .rating__star:hover ~ .rating__star,
+.rating__input:checked ~ .rating__star
+	background-image url(../../svg/star_2.svg)
 
-.rating-star,
-.rating:hover .rating-star
+.rating__star,
+.rating:hover .rating__star
 	width 20%
 	height 100%
 	position absolute
 	top 0
 	bottom 0
 	margin auto
-	background-image url(../../star_1.svg)
-	background-position 0 0
-	background-repeat no-repeat
-	background-size cover
+	background url(../../svg/star_1.svg) 0 0 / cover no-repeat
 	cursor pointer

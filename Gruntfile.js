@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                 src: ['css/dev/stylus.css'],
                 dest: 'css/dev/',
                 options: {
-                    target: ['*.svg'],
+                    target: ['svg/*.svg'],
                     fixDirLevel: true
                     //baseDir: '../../'
                 }
