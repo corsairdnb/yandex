@@ -17,13 +17,13 @@ body
 	margin 0
 	position relative
 
-.rating-wrapper
+.rating
 	display inline-block
 	position relative
 	width 320px
 	height 64px
 
-.rating
+.rating-wrapper
 	display flex
 	flex-direction row-reverse
 	justify-content flex-end
@@ -41,7 +41,7 @@ body
 .rating:hover .rating-star:hover,
 .rating:hover .rating-star:hover ~ .rating-star,
 .rating-input:checked ~ .rating-star
-	background-image url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDE2IDMyIj4NCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQyIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+DQogICAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZjYwMCIvPg0KICAgICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjZjMDAiLz4NCiAgICA8L2xpbmVhckdyYWRpZW50Pg0KICAgIDxwb2x5Z29uIGZpbGw9InVybCgjZ3JhZDIpIiBwb2ludHM9IjcuOTgyLC0wLjAwMSA5Ljg2NSw2LjExMSAxNS45NjMsNi4xMTEgMTEuMDMsOS44ODkgMTIuOTE1LDE2LjAwMSA3Ljk4MiwxMi4yMjQgMy4wNDgsMTYuMDAxIDQuOTMzLDkuODg5IDAsNi4xMTEgNi4wOTgsNi4xMTEiLz4NCjwvc3ZnPg==")
+	background-image url(../../star_2.svg)
 
 .rating-star,
 .rating:hover .rating-star
@@ -51,9 +51,8 @@ body
 	top 0
 	bottom 0
 	margin auto
-	background-image url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDE2IDMyIj4NCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+DQogICAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Q1ZDVkNSIvPg0KICAgICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3MTcxNzEiLz4NCiAgICA8L2xpbmVhckdyYWRpZW50Pg0KICAgIDxwb2x5Z29uIGZpbGw9InVybCgjZ3JhZDEpIiBwb2ludHM9IjcuOTgyLC0wLjAwMSA5Ljg2NSw2LjExMSAxNS45NjMsNi4xMTEgMTEuMDMsOS44ODkgMTIuOTE1LDE2LjAwMSA3Ljk4MiwxMi4yMjQNCgkzLjA0OCwxNi4wMDEgNC45MzMsOS44ODkgMCw2LjExMSA2LjA5OCw2LjExMSIvPg0KPC9zdmc+")
+	background-image url(../../star_1.svg)
 	background-position 0 0
 	background-repeat no-repeat
 	background-size cover
 	cursor pointer
-	fill #000

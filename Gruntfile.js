@@ -44,6 +44,17 @@ module.exports = function (grunt) {
             minified: 'index.html',
             dev: 'index.dev.html'
         },
+        dataUri: {
+            dist: {
+                src: ['css/dev/stylus.css'],
+                dest: 'css/dev/',
+                options: {
+                    target: ['*.svg'],
+                    fixDirLevel: true
+                    //baseDir: '../../'
+                }
+            }
+        },
         connect: {
             all: {
                 options:{
@@ -57,7 +68,7 @@ module.exports = function (grunt) {
         watch: {
             stylus: {
                 files: ['styl/*.styl'],
-                tasks: ['stylus']
+                tasks: ['stylus', 'dataUri']
             },
             /*cssmin: {
                 files: ['css/dev*//*.css'],
@@ -72,8 +83,8 @@ module.exports = function (grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('default', ['stylus', 'connect', 'watch']);
-    grunt.registerTask('deploy', ['stylus', 'cssmin', 'copy:min', 'htmlmin']);
+    grunt.registerTask('default', ['stylus', 'dataUri', 'connect', 'watch']);
+    grunt.registerTask('deploy', ['stylus', 'dataUri', 'cssmin', 'copy:min', 'htmlmin']);
     grunt.registerTask('prod', ['clean:minified', 'copy:source', 'clean:dev']);
 
 };

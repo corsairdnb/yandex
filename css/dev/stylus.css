@@ -13,13 +13,13 @@ body {
   margin: 0;
   position: relative;
 }
-.rating-wrapper {
+.rating {
   display: inline-block;
   position: relative;
   width: 320px;
   height: 64px;
 }
-.rating {
+.rating-wrapper {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -53,7 +53,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  fill: #000;
 }
 
 
