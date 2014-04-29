@@ -1,6 +1,12 @@
 *
 	box-sizing border-box
 
+@media (max-width: 767px) {
+	html {
+		font-size 13px
+	}
+}
+
 html, body
 	height 100%
 
@@ -34,7 +40,7 @@ h1
 .page__line:nth-child(odd)
 	background #dbf2ff
 
-$ratingBasicWidth = 6rem
+$ratingBasicWidth = 80px
 $ratingBasicHeight = $ratingBasicWidth / 5
 
 .rating
@@ -44,6 +50,7 @@ $ratingBasicHeight = $ratingBasicWidth / 5
 	height $ratingBasicHeight
 	min-width 80px
 	min-height 16px
+	max-width 90vw
 
 .rating_big
 	width $ratingBasicWidth*2

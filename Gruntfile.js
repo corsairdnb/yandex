@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         cssmin: {
             compress: {
                 files: {
-                    'css/prod/main.css': ['css/dev/normalize.css', 'css/dev/stylus.css']
+                    'css/prod/main.css': ['css/dev/stylus.css']
                 }
             }
         },
@@ -51,7 +51,6 @@ module.exports = function (grunt) {
                 options: {
                     target: ['svg/*.svg'],
                     fixDirLevel: true
-                    //baseDir: '../../'
                 }
             }
         },

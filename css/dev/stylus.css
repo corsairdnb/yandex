@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+@media (max-width: 767px) {
+  html {
+    font-size: 13px;
+  }
+}
 html,
 body {
   height: 100%;
@@ -38,18 +43,19 @@ h1 {
 .rating {
   display: inline-block;
   position: relative;
-  width: 6rem;
-  height: 1.2rem;
+  width: 80px;
+  height: 16px;
   min-width: 80px;
   min-height: 16px;
+  max-width: 90vw;
 }
 .rating_big {
-  width: 12rem;
-  height: 2.4rem;
+  width: 160px;
+  height: 32px;
 }
 .rating_huge {
-  width: 24rem;
-  height: 4.8rem;
+  width: 320px;
+  height: 64px;
 }
 .rating__wrapper {
   display: flex;
