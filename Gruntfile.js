@@ -69,10 +69,6 @@ module.exports = function (grunt) {
                 files: ['styl/*.styl'],
                 tasks: ['stylus', 'dataUri']
             },
-            /*cssmin: {
-                files: ['css/dev*//*.css'],
-                tasks: ['cssmin']
-            },*/
             files: '*.html',
             options: {
                 livereload: true
